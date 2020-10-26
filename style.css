@@ -6,12 +6,52 @@ body {
 
 nav {
   background-color: #3f51b5;
+  height: 4em;
 }
 nav h1 {
   text-align: center;
   margin: 0;
   color: white;
   font-size: 2em;
+  line-height: 2em;
+}
+
+main {
+  background-color: #eee;
+  padding: 25px;
+  min-height: calc(100vh - 4em - 50px);
+}
+main h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+main .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 50px);
+}
+main .wrap .course {
+  cursor: pointer;
+  background-color: #ff5252;
+  min-width: 300px;
+  min-height: 300px;
+  width: 25vw;
+  height: 25vw;
+  margin: 25px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+main .wrap .course p {
+  color: white;
+  text-align: center;
+  margin: 0;
+  margin-top: calc(9% - 1em);
+}
+main .wrap .course img {
+  height: 80%;
 }
 
 /*# sourceMappingURL=style.css.map */
