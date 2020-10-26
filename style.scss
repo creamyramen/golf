@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,700&display=swap');
+$blue: #3f51b5;
+$red: #ff5252;
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+nav {
+    background-color: $blue;
+    h1 {
+        text-align: center;
+        margin: 0;
+        color: white;
+        font-size: 2em;
+    }
+}
