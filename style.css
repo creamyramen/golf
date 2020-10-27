@@ -25,6 +25,7 @@ main h1 {
   margin: 0;
   text-align: center;
   font-size: 1.5em;
+  color: #000;
 }
 main .wrap {
   display: flex;
@@ -52,6 +53,23 @@ main .wrap .course p {
 }
 main .wrap .course img {
   height: 80%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .course {
+    background-color: #111;
+  }
+
+  .main {
+    background-color: #000;
+  }
+  .main h1 {
+    color: white;
+  }
+
+  nav {
+    background-color: #111;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
