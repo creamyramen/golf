@@ -6,7 +6,6 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
         course.style.backgroundPosition = "center";
         course.style.backgroundRepeat = "no-repeat";
         course.style.backroundSize = "cover";
-        // console.log(i)
     }
     document.querySelector("main").style.background = "#000";
     document.querySelector("nav").style.background = "#111";
