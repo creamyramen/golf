@@ -5,6 +5,7 @@ body {
 }
 
 nav {
+  transition: 0.5s;
   background-color: #3f51b5;
   height: 4em;
 }
@@ -17,6 +18,7 @@ nav h1 {
 }
 
 main {
+  transition: 0.5s;
   background-color: #eee;
   padding: 25px;
   min-height: calc(100vh - 4em - 50px);
@@ -26,6 +28,7 @@ main h1 {
   text-align: center;
   font-size: 1.5em;
   color: #000;
+  transition: 0.5s;
 }
 main .wrap {
   display: flex;
@@ -36,7 +39,6 @@ main .wrap {
 }
 main .wrap .course {
   cursor: pointer;
-  background-color: #ff5252;
   min-width: 300px;
   min-height: 300px;
   width: 25vw;
@@ -44,6 +46,12 @@ main .wrap .course {
   margin: 25px;
   overflow: hidden;
   border-radius: 5px;
+  transition: 0.5s;
+  background: url("background3.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 main .wrap .course p {
   color: white;
@@ -53,23 +61,6 @@ main .wrap .course p {
 }
 main .wrap .course img {
   height: 80%;
-}
-
-@media (prefers-color-scheme: dark) {
-  .course {
-    background-color: #111;
-  }
-
-  .main {
-    background-color: #000;
-  }
-  .main h1 {
-    color: white;
-  }
-
-  nav {
-    background-color: #111;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,6 +10,7 @@ body {
 }
 
 nav {
+    transition: .5s;
     background-color: $blue;
     height: 4em;
     h1 {
@@ -22,6 +23,7 @@ nav {
 }
 
 main {
+    transition: .5s;
     background-color: $white;
     padding: 25px;
     min-height: calc(100vh - 4em - 50px);
@@ -30,7 +32,7 @@ main {
         text-align: center;
         font-size: 1.5em;
         color: $black;
-        ;
+        transition: .5s;
     }
     .wrap {
         display: flex;
@@ -40,7 +42,6 @@ main {
         width: calc(100vw - 50px);
         .course {
             cursor: pointer;
-            background-color: $red;
             min-width: 300px;
             min-height: 300px;
             width: 25vw;
@@ -48,6 +49,12 @@ main {
             margin: 25px;
             overflow: hidden;
             border-radius: 5px;
+            transition: .5s;
+            background: url("background3.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             p {
                 color: white;
                 text-align: center;
@@ -58,20 +65,5 @@ main {
                 height: 80%;
             }
         }
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .course {
-        background-color: $gray;
-    }
-    .main {
-        background-color: $black;
-        h1 {
-            color: white;
-        }
-    }
-    nav {
-        background-color: $gray;
     }
 }

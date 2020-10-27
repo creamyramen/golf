@@ -1,23 +1,44 @@
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.querySelector(".course").style.backgroundColor = "#111";
-    document.querySelector("main").style.backgroundColor = "#000";
-    document.querySelector("nav").style.backgroundColor = "#111";
+    for (let i = 0; i < 3; i++) {
+        let course = document.querySelectorAll(".course")[i]
+        course.style.background = "url('background2.jpg')";
+        course.style.backgroundAttachment = "fixed";
+        course.style.position = "center";
+        course.style.repeat = "no-repeat";
+        course.style.backroundSize = "cover";
+    }
+    document.querySelector("main").style.background = "#000";
+    document.querySelector("nav").style.background = "#111";
     document.querySelector(".title").style.color = "#fff";
 }
 window.matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', event => {
         if (event.matches) {
-            document.querySelector(".course").style.backgroundColor = "#111";
-            document.querySelector("main").style.backgroundColor = "#000";
-            document.querySelector("nav").style.backgroundColor = "#111";
+            for (let i = 0; i < 3; i++) {
+                let course = document.querySelectorAll(".course")[i]
+                course.style.background = "url('background2.jpg')";
+                course.style.backgroundAttachment = "fixed";
+                course.style.position = "center";
+                course.style.repeat = "no-repeat";
+                course.style.backroundSize = "cover";
+            }
+            document.querySelector("main").style.background = "#000";
+            document.querySelector("nav").style.background = "#111";
             document.querySelector(".title").style.color = "#fff";
         } else {
-            document.querySelector(".course").style.backgroundColor = "##ff5252";
-            document.querySelector("main").style.backgroundColor = "#eee";
-            document.querySelector("nav").style.backgroundColor = "#3f51b5";
+            for (let i = 0; i < 3; i++) {
+                let course = document.querySelectorAll(".course")[i]
+                course.style.background = "url('background3.jpg')";
+                course.style.backgroundAttachment = "fixed";
+                course.style.position = "center";
+                course.style.repeat = "no-repeat";
+                course.style.backroundSize = "cover";
+            }
+            document.querySelector("main").style.background = "#eee";
+            document.querySelector("nav").style.background = "#3f51b5";
             document.querySelector(".title").style.color = "#000";
         }
-    })
+    });
 
 let http = new XMLHttpRequest();
 http.onreadystatechange = function() {
