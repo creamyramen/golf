@@ -47,11 +47,14 @@ main .wrap .course {
   overflow: hidden;
   border-radius: 5px;
   transition: 0.5s;
-  background: url("background3.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100vw;
+}
+main .wrap .course:hover {
+  margin-top: 15px;
+  transition: 0.2s;
 }
 main .wrap .course p {
   color: white;
@@ -61,6 +64,12 @@ main .wrap .course p {
 }
 main .wrap .course img {
   height: 80%;
+}
+main .wrap .dark {
+  background: url("background2.jpg");
+}
+main .wrap .light {
+  background: url("background3.jpg");
 }
 
 /*# sourceMappingURL=style.css.map */

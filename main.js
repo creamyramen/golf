@@ -1,11 +1,7 @@
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     for (let i = 0; i < 3; i++) {
-        let course = document.querySelectorAll(".course")[i]
-        course.style.background = "url('background2.jpg')";
-        course.style.backgroundAttachment = "fixed";
-        course.style.backgroundPosition = "center";
-        course.style.backgroundRepeat = "no-repeat";
-        course.style.backroundSize = "cover";
+        document.querySelectorAll(".course")[i].classList.remove("light");
+        document.querySelectorAll(".course")[i].classList.add("dark");
     }
     document.querySelector("main").style.background = "#000";
     document.querySelector("nav").style.background = "#111";
@@ -15,26 +11,16 @@ window.matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', event => {
         if (event.matches) {
             for (let i = 0; i < 3; i++) {
-                let course = document.querySelectorAll(".course")[i]
-                course.style.background = "url('background2.jpg')";
-                course.style.backgroundAttachment = "fixed";
-                course.style.backgroundPosition = "center";
-                course.style.backgroundRepeat = "no-repeat";
-                course.style.backroundSize = "cover";
-                console.log(i)
+                document.querySelectorAll(".course")[i].classList.remove("light");
+                document.querySelectorAll(".course")[i].classList.add("dark");
             }
             document.querySelector("main").style.background = "#000";
             document.querySelector("nav").style.background = "#111";
             document.querySelector(".title").style.color = "#fff";
         } else {
             for (let i = 0; i < 3; i++) {
-                let course = document.querySelectorAll(".course")[i]
-                course.style.background = "url('background3.jpg')";
-                course.style.backgroundAttachment = "fixed";
-                course.style.backgroundPosition = "center";
-                course.style.backgroundRepeat = "no-repeat";
-                course.style.backroundSize = "cover";
-                console.log(i)
+                document.querySelectorAll(".course")[i].classList.remove("dark");
+                document.querySelectorAll(".course")[i].classList.add("light");
             }
             document.querySelector("main").style.background = "#eee";
             document.querySelector("nav").style.background = "#3f51b5";
