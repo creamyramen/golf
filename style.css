@@ -7,13 +7,13 @@ body {
 nav {
   transition: 0.5s;
   background-color: #3f51b5;
-  height: 4em;
+  height: 3em;
 }
 nav h1 {
   text-align: center;
   margin: 0;
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 2em;
 }
 
@@ -26,7 +26,7 @@ main {
 main h1 {
   margin: 0;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
   color: #000;
   transition: 0.5s;
 }
@@ -50,7 +50,7 @@ main .wrap .course {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100vw;
+  background-size: 100vw 100vh;
 }
 main .wrap .course:hover {
   margin-top: 15px;
@@ -66,10 +66,35 @@ main .wrap .course img {
   height: 80%;
 }
 main .wrap .dark {
-  background: url("background2.jpg");
+  background-image: url("background2.jpg");
 }
 main .wrap .light {
-  background: url("background3.jpg");
+  background-image: url("background3.jpg");
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  margin: 5vw;
+  flex-wrap: wrap;
+}
+.card .column {
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.card .column:last-child {
+  border-right: 2px solid black;
+}
+.card .column div {
+  background-color: white;
+  padding: 10px;
+  border-top: 2px solid black;
+}
+.card .column div p {
+  color: black;
+  text-align: center;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
