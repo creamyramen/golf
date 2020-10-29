@@ -7,12 +7,16 @@ $gray: #111;
 body {
     margin: 0;
     font-family: 'Poppins';
+    background-color: $white;
 }
 
 nav {
     transition: .5s;
     background-color: $blue;
     height: 3em;
+    position: fixed;
+    width: 100vw;
+    top: 0;
     h1 {
         text-align: center;
         margin: 0;
@@ -27,7 +31,7 @@ main {
     background-color: $white;
     padding: 25px;
     min-height: calc(100vh - 4em - 50px);
-    // display: none;
+    margin-top: 3em;
     h1 {
         margin: 0;
         text-align: center;
@@ -73,7 +77,7 @@ main {
             background-image: url("background2.jpg");
         }
         .light {
-            background-image: url("background3.jpg");
+            background-image: url("background4.jpg");
         }
     }
 }

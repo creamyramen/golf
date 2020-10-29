@@ -30,7 +30,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
             document.querySelector("main").style.background = "#eee";
             document.querySelector("nav").style.background = "#3f51b5";
             document.querySelector(".title").style.color = "#000";
-            document.querySelector("body").style.background = "#fff";
+            document.querySelector("body").style.background = "#eee";
         }
     });
 
