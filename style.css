@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: "Poppins";
   background-color: #eee;
+  display: flex;
 }
 
 nav {
@@ -26,7 +27,7 @@ main {
   background-color: #eee;
   padding: 25px;
   min-height: calc(100vh - 4em - 50px);
-  margin-top: 3em;
+  margin: 3em 0 0 0;
 }
 main h1 {
   margin: 0;
@@ -76,25 +77,48 @@ main .wrap .dark {
 main .wrap .light {
   background-image: url("background4.jpg");
 }
+main .wrap .going {
+  margin-right: 200vw;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.42, -0.81, 0.95, 0.85);
+}
 
 .card {
-  display: flex;
   justify-content: center;
-  width: 90vw;
-  margin: 5vw;
-  flex-wrap: wrap;
+  margin: 4em 5vw;
+  overflow-x: scroll;
 }
 .card .column {
+  display: flex;
+  border-top: 2px solid black;
   border-left: 2px solid black;
-  border-bottom: 2px solid black;
 }
 .card .column:last-child {
-  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.card .column .tee {
+  display: flex;
+  width: 5em;
+  text-align: center;
+}
+.card .column .tee select {
+  margin-right: 10px;
+  width: 3em;
+}
+.card .column .yourScore {
+  min-width: 2em;
+}
+.card .column .par {
+  width: 3em;
 }
 .card .column div {
   background-color: white;
   padding: 10px;
-  border-top: 2px solid black;
+  border-right: 2px solid black;
+  height: 1.5em;
+}
+.card .column div:first-child {
+  width: 3em;
 }
 .card .column div p {
   color: black;

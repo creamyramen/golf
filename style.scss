@@ -8,6 +8,7 @@ body {
     margin: 0;
     font-family: 'Poppins';
     background-color: $white;
+    display: flex;
 }
 
 nav {
@@ -31,7 +32,7 @@ main {
     background-color: $white;
     padding: 25px;
     min-height: calc(100vh - 4em - 50px);
-    margin-top: 3em;
+    margin: 3em 0 0 0;
     h1 {
         margin: 0;
         text-align: center;
@@ -79,25 +80,52 @@ main {
         .light {
             background-image: url("background4.jpg");
         }
+        .going {
+            margin-right: 200vw;
+            transition: .5s;
+            transition-timing-function: cubic-bezier(.42, -0.81, .95, .85);
+        }
     }
 }
 
 .card {
-    display: flex;
+    // display: flex;
+    // flex-direction: vertical;
     justify-content: center;
-    width: 90vw;
-    margin: 5vw;
-    flex-wrap: wrap;
+    // max-width: 90vw;
+    margin: 4em 5vw;
+    overflow-x: scroll;
+    // height: calc(90px + 6em);
     .column {
+        display: flex;
         &:last-child {
-            border-right: 2px solid black;
+            border-bottom: 2px solid black;
         }
+        border-top: 2px solid black;
         border-left: 2px solid black;
-        border-bottom: 2px solid black;
+        .tee {
+            display: flex;
+            width: 5em;
+            text-align: center;
+            select {
+                margin-right: 10px;
+                width: 3em;
+            }
+        }
+        .yourScore {
+            min-width: 2em;
+        }
+        .par {
+            width: 3em;
+        }
         div {
+            &:first-child {
+                width: 3em;
+            }
             background-color: white;
             padding: 10px;
-            border-top: 2px solid black;
+            border-right: 2px solid black;
+            height: 1.5em;
             p {
                 color: black;
                 text-align: center;
