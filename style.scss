@@ -1,19 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,700&display=swap');
 $blue: #3f51b5;
 $red: #ff5252;
-$white: #eee;
+$white: #fff;
 $black: #000;
-$gray: #111;
+$gray: #222;
 body {
     margin: 0;
     font-family: 'Poppins';
     background-color: $white;
     display: flex;
+    transition: .5s;
+}
+
+.dark {
+    background: $black;
+    nav {
+        background: $gray;
+    }
+    main {
+        background-color: $black;
+        h1 {
+            color: white;
+        }
+    }
+    .course {
+        background-image: url("background2.jpg");
+    }
+    .select {
+        background-color: $gray;
+        color: white;
+        .num,
+        select {
+            border: 2px solid #ad2b9e;
+            color: white;
+            background-color: black;
+            outline: none;
+        }
+        button {
+            background: #ad2b9e;
+        }
+        input[type="text"],
+        textarea {
+            background-color: black;
+            color: white;
+        }
+    }
+    .card {
+        .finished {
+            background: #ad2b9e;
+        }
+        select {
+            border: 2px solid #ad2b9e;
+            color: white;
+            background-color: black;
+            outline: none;
+        }
+        .table {
+            border-color: #333;
+            color: white;
+            .cell,
+            .par,
+            .hcp {
+                border-color: #333;
+            }
+        }
+    }
+}
+
+.light {
+    nav {
+        background-color: $blue;
+    }
+    main {
+        background-color: $white;
+        h1 {
+            color: $black;
+        }
+    }
+    .course {
+        background-image: url("background4.jpg");
+    }
+    .select {
+        background-color: white;
+        .num,
+        select {
+            border: 2px solid $blue;
+        }
+    }
 }
 
 nav {
     transition: .5s;
-    background-color: $blue;
     height: 3em;
     position: fixed;
     width: 100vw;
@@ -29,7 +106,6 @@ nav {
 
 main {
     transition: .5s;
-    background-color: $white;
     padding: 25px;
     min-height: calc(100vh - 4em - 50px);
     margin: 3em 0 0 0;
@@ -37,7 +113,6 @@ main {
         margin: 0;
         text-align: center;
         font-size: 1em;
-        color: $black;
         transition: .5s;
     }
     .wrap {
@@ -74,63 +149,236 @@ main {
                 height: 80%;
             }
         }
-        .dark {
-            background-image: url("background2.jpg");
+    }
+}
+
+.select {
+    .player {
+        margin-bottom: 2em;
+    }
+    position: fixed;
+    top: 10%;
+    left: 5vw;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: calc(90vw - 6em);
+    max-height: calc(100vh - 9em);
+    transform: scale(0);
+    padding: 3em 3em 1em 3em;
+    transition: .5s;
+    overflow-y: scroll;
+    transition-timing-function: cubic-bezier(.32,
+    -0.62,
+    .83,
+    .67);
+    p {
+        font-weight: 700;
+        margin: 0;
+        span {
+            font-weight: 500;
+            font-size: .75em;
         }
-        .light {
-            background-image: url("background4.jpg");
+    }
+    .num {
+        outline: none;
+        border: 2px solid $blue;
+        padding: .5em;
+        border-radius: .25em;
+        width: calc(90vw - 9em);
+        max-width: 500px;
+        margin-top: 2em;
+    }
+    button {
+        float: right;
+        clear: right;
+        width: 6em;
+        outline: none;
+        background: $blue;
+        color: white;
+        font-weight: 700;
+        padding: .5em;
+        border-radius: 3px;
+        border: none;
+        margin: 1em .5em;
+    }
+    .buttonWrap {
+        display: flex;
+        justify-content: space-around;
+        button {
+            float: none;
+            clear: none;
         }
-        .going {
-            margin-right: 200vw;
-            transition: .5s;
-            transition-timing-function: cubic-bezier(.42, -0.81, .95, .85);
+    }
+    .error {
+        color: red;
+        font-size: .75em;
+        font-weight: 300;
+        margin: 0;
+    }
+    .name {
+        &:focus {
+            outline: none;
         }
+        outline: none;
+        padding: .5em;
+        border-radius: .25em;
+        width: calc(90vw - 9em);
+        max-width: 500px;
+    }
+    select {
+        outline: none;
+        border: 2px solid $blue;
+        padding: .5em;
+        border-radius: .25em;
+        width: calc(90vw - 8em + 4px);
+        max-width: 500px;
+    }
+}
+
+.modalbg {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    width: 100vw;
+    height: 110vh;
+    position: fixed;
+}
+
+.activeSelect {
+    overflow-y: hidden;
+    .modalbg {
+        display: block;
+    }
+    .select {
+        transform: scale(1);
+        transition-timing-function: cubic-bezier(.25, 1.11, .66, 1.39);
+    }
+}
+
+.cardActive {
+    main {
+        margin-left: -100vw;
     }
 }
 
 .card {
-    // display: flex;
-    // flex-direction: vertical;
-    justify-content: center;
-    // max-width: 90vw;
-    margin: 4em 5vw;
-    overflow-x: scroll;
-    // height: calc(90px + 6em);
-    .column {
+    margin-top: 3em;
+    padding: 1em;
+    width: calc(100vw - 2em);
+    select {
+        outline: none;
+        border: 2px solid $blue;
+        padding: .5em;
+        border-radius: .25em;
+        width: 7em;
+        max-width: 500px;
+        height: 2.5em;
+        margin-bottom: 2em;
+    }
+    .table {
+        border: 2px solid black;
+        // margin-top: 2em;
         display: flex;
-        &:last-child {
-            border-bottom: 2px solid black;
-        }
-        border-top: 2px solid black;
-        border-left: 2px solid black;
-        .tee {
-            display: flex;
-            width: 5em;
-            text-align: center;
-            select {
-                margin-right: 10px;
-                width: 3em;
-            }
-        }
-        .yourScore {
-            min-width: 2em;
-        }
-        .par {
-            width: 3em;
-        }
-        div {
-            &:first-child {
-                width: 3em;
-            }
-            background-color: white;
-            padding: 10px;
-            border-right: 2px solid black;
+        width: 100%;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .column {
+        width: 25%;
+        padding: .25em 0 0 0;
+        .cell {
+            padding: .25em 0;
+            border-top: 2px solid black;
             height: 1.5em;
-            p {
-                color: black;
-                text-align: center;
-                margin: 0;
-            }
         }
     }
+    .par {
+        border-left: 2px solid black;
+    }
+    .hcp {
+        border-left: 2px solid black;
+    }
+    .finished {
+        float: right;
+        clear: right;
+        width: 6em;
+        outline: none;
+        background: $blue;
+        color: white;
+        font-weight: 700;
+        padding: .5em;
+        border-radius: 3px;
+        border: none;
+        margin: 1em .5em;
+    }
+}
+
+.wrapper {
+    position: fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+[class|="confetti"] {
+    position: absolute;
+}
+
+$colors: (#d13447,
+#ffbf00,
+#263672);
+@for $i from 0 through 150 {
+    $w: random(8);
+    $l: random(100);
+    .confetti-#{$i} {
+        width: #{$w}px;
+        height: #{$w*0.4}px;
+        background-color: nth($colors, random(3));
+        top: -10%;
+        left: unquote($l+"%");
+        opacity: random() + 0.5;
+        transform: rotate(#{random()*360}deg);
+        animation: drop-#{$i} unquote(4+random()+"s") unquote(random()+"s") 1;
+    }
+    @keyframes drop-#{$i} {
+        100% {
+            top: 110%;
+            left: unquote($l+random(15)+"%");
+        }
+    }
+}
+
+.gameOver {
+    position: fixed;
+    background-color: #333;
+    color: white;
+    width: 80vw;
+    padding: 5vw;
+    top: 20%;
+    left: 5vw;
+    transform: translateY(-50%);
+    z-index: 2;
+    transform: scale(0);
+    transition-timing-function: cubic-bezier(.32, -0.62, .83, .67);
+    // display: none;
+    button {
+        // float: right;
+        // clear: right;
+        width: 6em;
+        outline: none;
+        background: $blue;
+        color: white;
+        font-weight: 700;
+        padding: .5em;
+        border-radius: 3px;
+        border: none;
+        margin: 1em .5em;
+    }
+}
+
+.gamesDone {
+    display: block;
+}
+
+.gamesOver {
+    transform: scale(1);
 }

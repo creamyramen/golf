@@ -6,29 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body class="light">
     <nav>
         <h1>Un-Epic golf</h1>
     </nav>
     <main>
         <h1 class="title">Select your course</h1>
         <div class="wrap">
-            <div class="course c0 light">
-                <img src="" alt="">
+            <div class="course c0">
+                <img>
                 <p></p>
             </div>
-            <div class="course c1 light">
-                <img src="" alt="">
+            <div class="course c1">
+                <img>
                 <p></p>
             </div>
-            <div class="course c2 light">
-                <img src="" alt="">
+            <div class="course c2">
+                <img>
                 <p></p>
             </div>
         </div>
     </main>
+    <div class="select">
+        <div class="player">
+            <p>How many players will there be? <span>(Max 4)</span></p>
+            <input type="number" class="num" max="4">
+            <p class="error"></p>
+            <button class="submit">Submit</button>
+        </div>
+    </div>
+    <div class="modalbg"></div>
     <div class="card"></div>
+    <div class="gameOver">
+        <h1>Nice shot!</h1>
+        <p>Epic job</p>
+        <button>Review Score</button>
+    </div>
 </body>
-<script src="main.js"></script>
+<script src="script.js"></script>
 
 </html>
