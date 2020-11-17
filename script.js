@@ -133,20 +133,29 @@ for (let i = 0; i < document.querySelector(".wrap").childElementCount; i++) {
                                             wrapper.appendChild(confet);
                                             document.querySelector(".gameOver").classList.add("gamesOver");
                                             document.querySelector(".modalbg").classList.add("gamesDone");
-                                            let score = document.querySelector(".score").querySelectorAll(".cell")[20].innerHTML,
-                                                par = document.querySelector(".par").querySelectorAll(".cell")[20].innerHTML,
-                                                hcp = document.querySelector(".hcp").querySelectorAll(".cell")[20].innerHTML;
+
+                                        }
+                                        for (let j = 0; j < playerCount; j++) {
+                                            let score = 0,
+                                                hcp = 0,
+                                                par = 0;
+                                            for (let k = 0; k < 18; k++) {
+                                                score += players[j].score[k];
+                                                hcp += inf.data.holes[k].teeBoxes[players[j].tee].hcp;
+                                                yards += inf.data.holes[k].teeBoxes[players[j].tee].yards;
+                                            }
                                             if (parseInt(score) > (parseInt(par) + parseInt(hcp))) {
-                                                document.querySelector(".gameOver").querySelector("h1").innerHTML = "Congrats!";
-                                                document.querySelector(".gameOver").querySelector("p").innerHTML = `You were ${parseInt(score) - (parseInt(par) + parseInt(hcp))} over par`;
+                                                document.querySelector(".finalScores").innerHTML += `<p>${players[j].name}, you were ${parseInt(score) - (parseInt(par) + parseInt(hcp))} over par</p>`;
                                             } else if (parseInt(score) == (parseInt(par) + parseInt(hcp))) {
-                                                document.querySelector(".gameOver").querySelector("h1").innerHTML = "Congrats!";
-                                                document.querySelector(".gameOver").querySelector("p").innerHTML = `You were right on par`;
+                                                document.querySelector(".finalScores").innerHTML += `<p>${players[j].name}, you were right on par</p>`;
                                             } else {
-                                                document.querySelector(".gameOver").querySelector("h1").innerHTML = "Congrats!";
-                                                document.querySelector(".gameOver").querySelector("p").innerHTML = `You were ${(parseInt(par) + parseInt(hcp) - parseInt(score))} under par`;
+                                                document.querySelector(".finalScores").innerHTML += `<p>${players[j].name}, you were ${(parseInt(par) + parseInt(hcp) - parseInt(score))} under par</p>`;
                                             }
                                         }
+                                        document.querySelector(".gameOver").querySelector("button").addEventListener("click", function() {
+                                            console.log('refrsed')
+                                            window.parent.location = window.parent.location.href;
+                                        })
                                     });
                                 })
                                 let hole = document.querySelectorAll('.column')[0],
@@ -210,6 +219,7 @@ for (let i = 0; i < document.querySelector(".wrap").childElementCount; i++) {
                                         for (let g = 0; g < inf.data.holeCount; g++) {
                                             yards.querySelectorAll('.cell')[g].innerHTML = inf.data.holes[g].teeBoxes[players[num].tee].yards;
                                             score.querySelectorAll('.cell')[g].innerHTML = players[num].score[g];
+                                            hcp.querySelectorAll('.cell')[g].innerHTML = inf.data.holes[g].teeBoxes[players[num].tee].hcp;
                                         }
                                         yards.querySelectorAll(".cell")[18].innerHTML = findIn('.yards');
                                         yards.querySelectorAll(".cell")[19].innerHTML = findOut('.yards');
@@ -238,18 +248,9 @@ for (let i = 0; i < document.querySelector(".wrap").childElementCount; i++) {
                                             players[activePlayer].score[g] = parseInt(myScore);
                                             select.querySelector("input").value = "";
                                             console.log(players[activePlayer].score);
-                                            yards.querySelectorAll(".cell")[18].innerHTML = findIn('.yards');
-                                            yards.querySelectorAll(".cell")[19].innerHTML = findOut('.yards');
-                                            yards.querySelectorAll(".cell")[20].innerHTML = findTotal('.yards');
                                             score.querySelectorAll(".cell")[18].innerHTML = findIn('.score');
                                             score.querySelectorAll(".cell")[19].innerHTML = findOut('.score');
                                             score.querySelectorAll(".cell")[20].innerHTML = findTotal('.score');
-                                            par.querySelectorAll(".cell")[18].innerHTML = findIn('.par');
-                                            par.querySelectorAll(".cell")[19].innerHTML = findOut('.par');
-                                            par.querySelectorAll(".cell")[20].innerHTML = findTotal('.par');
-                                            hcp.querySelectorAll(".cell")[18].innerHTML = findIn('.hcp');
-                                            hcp.querySelectorAll(".cell")[19].innerHTML = findOut('.hcp');
-                                            hcp.querySelectorAll(".cell")[20].innerHTML = findTotal('.hcp');
                                         })
                                     })
                                 }

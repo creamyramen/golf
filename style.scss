@@ -10,6 +10,7 @@ body {
     background-color: $white;
     display: flex;
     transition: .5s;
+    overflow-x: hidden;
 }
 
 .dark {
@@ -18,7 +19,9 @@ body {
         background: $gray;
     }
     main {
+        // width: 100vw;
         background-color: $black;
+        // overflow-x: hidden;
         h1 {
             color: white;
         }
@@ -109,6 +112,8 @@ main {
     padding: 25px;
     min-height: calc(100vh - 4em - 50px);
     margin: 3em 0 0 0;
+    max-width: calc(100vw - 50px);
+    // overflow-x: hidden;
     h1 {
         margin: 0;
         text-align: center;
@@ -348,6 +353,9 @@ $colors: (#d13447,
 }
 
 .gameOver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     background-color: #333;
     color: white;
@@ -363,7 +371,7 @@ $colors: (#d13447,
     button {
         // float: right;
         // clear: right;
-        width: 6em;
+        width: 10em;
         outline: none;
         background: $blue;
         color: white;
